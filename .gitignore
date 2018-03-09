@@ -1,0 +1,7 @@
+# ici tous les fichiers qu'on ne souhaite pas indexer dans git (partage sur github, donc problèmes de sécurité, ou présence de bcp de bibliothèques, lourdeur inutile de git)
+
+# on mettrait normalement mysqliconfig.php dans ce fichier, sauf qu'ici nous n'avons pas de contantes dangereuses vers une db non locale
+#mysqliconfig.php
+
+# inutile de partager le dossier de phpstorm
+.idea/
