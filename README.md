@@ -1,4 +1,5 @@
-# exercice MVC
+
+# exercice MVC et creation Crud
 ## exercice basé sur le dossier exe_32 et la bdd exe_32
 ### Principe:
 #### Affichez sur la page d'accueil 
