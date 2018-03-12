@@ -34,3 +34,15 @@ function listeArtiComplet($db, $id){
     }
 }
 
+function insertArti($db,$title,$texte){
+    if(empty($title)||empty($texte)){
+        return false;
+    }
+    $sql= "INSERT INTO arti(titre, texte) VALUES ('$title','$texte')";
+    $ajout = mysqli_query($db,$sql);
+    if(mysqli_affected_rows($db)){
+        return true;
+    }
+    return false;
+}
+
