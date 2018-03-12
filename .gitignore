@@ -5,3 +5,5 @@
 
 # inutile de partager le dossier de phpstorm
 .idea/
+# ni de netbeans
+/nbproject/
