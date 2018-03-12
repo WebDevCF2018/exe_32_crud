@@ -7,7 +7,9 @@
 <body>
 <h1>Accueil</h1>
 <div id="menu">
-    <a href="?admin">site de l'administration</a>
+
+    <a href="?admin">Administration des articles</a>
+
 </div>
 <div id="contenu">
     <?php
@@ -23,6 +25,8 @@
             <!-- ici le foreach pour les categ -->
             <p><?= $item['texte'] ?> ... <a href="?article=<?= $item['idarti'] ?>">Lire la suite</a></p>
             <p><?= $item['publie'] ?></p>
+
+
             <hr>
             <?php
         }
