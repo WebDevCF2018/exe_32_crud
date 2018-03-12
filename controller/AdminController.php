@@ -1,7 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: nicolas.diarra
- * Date: 12/03/2018
- * Time: 13:51
- */
+// controleur gérant l'administration
+
+require_once "modeles/ArticleModele.php";
+
+require_once "vues/Admin.html.php";
