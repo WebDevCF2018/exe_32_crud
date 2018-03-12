@@ -9,6 +9,11 @@
 <div id="menu">
     <a href="?./">retour à l'acceuil</a>
 <div id="contenu">
+
+        <ul>
+            <li><a href="?admin&ajout">Ajouter un article</a></li>
+        </ul>
+
     <?php
 
 
