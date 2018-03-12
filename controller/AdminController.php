@@ -9,8 +9,28 @@ require_once "modeles/ArticleModele.php";
 // si on a cliqué sur ajouter
 if (isset($_GET['ajout'])) {
 
-    // on appel la vue contenant le formulaire
-    require_once "vues/FormInsert.html.php";
+    // si le formulaire a été envoyé
+    if(isset($_POST['letitre'],$_POST['letexte'])){
+
+        // on met nos variables POST en variables locales, on protège nos variables contre une éventuelle attaque sql
+        $titre = htmlspecialchars(strip_tags(trim($_POST['letitre'])),ENT_QUOTES);
+        $texte = htmlspecialchars($_POST['letexte'],ENT_QUOTES);
+
+        // on va chercher la méthode qui permet d'insérer un nouvel article (modeles/ArticleModele.php)
+        $envoi = insertArti($mysqli,$titre,$texte);
+
+        // l'article est bien inséré
+        if($envoi){
+            // redirection accueil admin
+            header("Location: ./?admin");
+        }
+
+    // sinon affichage du formulaire
+    }else {
+
+        // on appel la vue contenant le formulaire
+        require_once "vues/FormInsert.html.php";
+    }
 
 } else {
 
