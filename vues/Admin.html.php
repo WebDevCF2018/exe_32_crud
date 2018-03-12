@@ -10,6 +10,9 @@
     <a href="./">Retour sur l'accueil</a>
 </div>
 <div id="contenu">
+        <ul>
+            <li><a href="?admin&ajout">Ajouter un article</a></li>
+        </ul>
     <?php
 
 
