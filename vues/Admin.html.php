@@ -6,8 +6,13 @@
 </head>
 <body>
 <h1>Admin du site</h1>
-
+<div id="menu">
+    <a href="./">Retour sur l'accueil</a>
+</div>
 <div id="contenu">
+        <ul>
+            <li><a href="?admin&ajout">Ajouter un article</a></li>
+        </ul>
     <?php
 
 
