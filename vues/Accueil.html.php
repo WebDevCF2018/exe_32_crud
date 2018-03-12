@@ -6,7 +6,9 @@
 </head>
 <body>
 <h1>Accueil</h1>
-
+<div id="menu">
+    <a href="?admin">site de l'administration</a>
+</div>
 <div id="contenu">
     <?php
 

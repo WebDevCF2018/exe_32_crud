@@ -5,8 +5,9 @@
     <title>Accueil du site</title>
 </head>
 <body>
-<h1>Accueil</h1>
-
+<h1>admin</h1>
+<div id="menu">
+    <a href="?./">retour à l'acceuil</a>
 <div id="contenu">
     <?php
 
