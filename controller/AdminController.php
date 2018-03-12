@@ -9,4 +9,4 @@ require_once "modeles/ArticleModele.php";
 $articles = listeArtiAccueil($mysqli);
 
 // on prend la vue
-require_once "vues/Accueil.html.php";
+require_once "vues/admin.html.php";
