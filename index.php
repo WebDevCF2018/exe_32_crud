@@ -15,8 +15,12 @@ if(empty($_GET)){
 
 // sinon si il existe une variable GET qui s'apelle c => catégorie
 
+}elseif (isset($_GET['admin'])){
+    require_once "controller/AdminController.php";
+
 }elseif (isset($_GET['article'])){
     require_once "controller/ArticleController.php";
+
 
 // sinon (existence d'une autre autre variable get que celles attendues) => Accueil
 }else{
