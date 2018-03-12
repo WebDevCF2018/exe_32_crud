@@ -33,4 +33,20 @@ function listeArtiComplet($db, $id){
         return false;
     }
 }
-
+/*
+ * Permet d'insérer un article dans la table arti, renvoie true si ça a fonctionné, false en cas d'échec
+ */
+function insertArti($db,$title,$text){
+    // vérification de sécurité de $title et $text
+    if(empty($title)||empty($text)){
+        return false;
+    }
+    // req sql
+    $sql = "INSERT INTO arti (titre,texte) VALUES ('$title','$text');";
+    $ajout = mysqli_query($db,$sql);
+    // si on a inséré l'article
+    if(mysqli_affected_rows($db)){
+        return true;
+    }
+    return false;
+}

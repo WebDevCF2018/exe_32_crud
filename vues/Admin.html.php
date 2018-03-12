@@ -11,7 +11,7 @@
 </div>
 <div id="contenu">
         <ul>
-            <li><a href="?admin&ajout">Ajouter un article</a></li>
+            <li><a href="?admin&ajout"><img src="vues/img/create.png" alt="ajouter un article"> Ajouter un article</a> </li>
         </ul>
     <?php
 
