@@ -23,6 +23,9 @@ if (isset($_GET['ajout'])) {
         if($envoi){
             // redirection accueil admin
             header("Location: ./?admin");
+        }else{
+            // l'article ne s'est pas inséré, on permet à l'utilisateur de retourner sur le formulaire déjà rempli
+            die("<h3>Article non inséré</h3><button onclick='history.go(-1);'>Réessayer</button>");
         }
 
     // sinon affichage du formulaire
