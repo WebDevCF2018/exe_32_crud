@@ -88,5 +88,15 @@ function deleteArti($db,$id){
  *
  */
 function updateArti($db,$id,$title,$text){
-
+    // si au moins un des champs est vide
+    if(empty($id)||empty($title)||empty($text)){
+        return false;
+    }
+    $sql = "UPDATE arti SET titre = '$title', texte='$text' WHERE idarti=$id";
+    $req = mysqli_query($db,$sql);
+    // si on a modifié l'article
+    if(mysqli_affected_rows($db)){
+        return true;
+    }
+    return false;
 }

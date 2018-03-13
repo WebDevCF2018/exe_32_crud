@@ -58,8 +58,30 @@ if (isset($_GET['ajout'])) {
             // on récupère l'article pour l'insérer dans le formulaire d'update
             $arti = listeArtiComplet($mysqli, $idc);
 
+            // si $arti vaut false (inexistence de l'article dans la db)
+            if(!$arti){
+                header("Location: ./?admin");
+            }
+
+
             // on prend la vue d'update
             require_once "vues/FormUpdate.html.php";
+
+        // on a cliqué sur modifier
+        }else{
+            // préparations de nos variables POST pour la modification
+            $idArt = (int) $_POST['idarti'];
+            $titreArt = htmlspecialchars(strip_tags(trim($_POST['letitre'])),ENT_QUOTES);
+            $texteArt = htmlspecialchars($_POST['letexte'],ENT_QUOTES);
+            // mise à jour
+            $update = updateArti($mysqli,$idArt,$titreArt,$texteArt);
+            // si changement, redirection vers le détail de l'article
+            if($update){
+                header("Location: ./?article=$idArt");
+            // pas de changement, on reste sur le formulaire de modification
+            }else{
+                header("Location: ./?admin&modif=$idArt");
+            }
         }
 
     }else{
