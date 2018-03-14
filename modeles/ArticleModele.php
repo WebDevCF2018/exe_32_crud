@@ -1,6 +1,16 @@
 <?php
 /**
  * On va "simuler" l'existence d'un objet Arti (représentation de la table arti) en utilisant des fonctions utiles pour nos contrôleurs
+ *
+ * Pour effectuer le CRUD (Create Read Update Delete)
+ *
+ */
+
+/*
+ * Affiche tous les articles
+ *
+ * Read
+ *
  */
 
 function listeArtiAccueil($db){
@@ -18,6 +28,13 @@ function listeArtiAccueil($db){
     }
 }
 
+/*
+ * Affiche le détail d'un article
+ *
+ * Read
+ *
+ */
+
 function listeArtiComplet($db, $id){
    $id = (int)$id;
     $sql = "SELECT idarti, titre, texte, publie  
@@ -33,4 +50,60 @@ function listeArtiComplet($db, $id){
         return false;
     }
 }
+/*
+ * Permet d'insérer un article dans la table arti, renvoie true si ça a fonctionné, false en cas d'échec
+ *
+ * Create
+ *
+ */
+function insertArti($db,$title,$text){
+    // vérification de sécurité de $title et $text
+    if(empty($title)||empty($text)){
+        return false;
+    }
+    // req sql
+    $sql = "INSERT INTO arti (titre,texte) VALUES ('$title','$text');";
+    $ajout = mysqli_query($db,$sql);
+    // si on a inséré l'article
+    if(mysqli_affected_rows($db)){
+        return true;
+    }
+    return false;
+}
 
+/*
+ * Permet de supprimer un article
+ *
+ * Delete
+ *
+ */
+function deleteArti($db,$id){
+    $idArti = (int) $id;
+    $sql = "DELETE FROM arti WHERE idarti=$idArti";
+    mysqli_query($db,$sql);
+    // si on a supprimé un article (une ligne a été affectée)
+    if(mysqli_affected_rows($db)){
+        return true;
+    }
+    return false;
+}
+
+/*
+ * Permet de modifier un article
+ *
+ * Update
+ *
+ */
+function updateArti($db,$id,$title,$text){
+    // si au moins un des champs est vide
+    if(empty($id)||empty($title)||empty($text)){
+        return false;
+    }
+    $sql = "UPDATE arti SET titre = '$title', texte='$text' WHERE idarti=$id";
+    $req = mysqli_query($db,$sql);
+    // si on a modifié l'article
+    if(mysqli_affected_rows($db)){
+        return true;
+    }
+    return false;
+}
