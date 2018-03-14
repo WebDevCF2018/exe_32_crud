@@ -25,7 +25,7 @@
             <h3><a href="?article=<?= $item['idarti'] ?>"><?= $item['titre'] ?></a></h3>
             <p><?= $item['texte'] ?> ... <a href="?article=<?= $item['idarti'] ?>">Lire la suite</a></p>
             <p><?= $item['publie'] ?>
-               |  <img width="16px" height="16px" src="vues/img/update.png" alt="Modifier l'article" onclick="document.location='?admin&modif=<?= $item['idarti'] ?>';" /> | <img width="16px" height="16px" src="vues/img/delete.png" alt="Supprimer l'article" onclick="lulu(<?=$item['idarti'] ?>);" />
+               |  <img width="16px" height="16px" src="vues/img/update.png" alt="Modifier l'article" onclick="document.location='?admin&modif=<?= $item['idarti'] ?>';" /> | <img width="16px" height="16px" src="vues/img/delete.png" alt="Supprimer l'article" onclick="deleteOk(<?=$item['idarti'] ?>);" />
             </p>
             <hr>
             <?php

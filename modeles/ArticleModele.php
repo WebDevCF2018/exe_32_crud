@@ -78,7 +78,14 @@ function insertArti($db,$title,$text){
  *
  */
 function deleteArti($db,$id){
-
+    $idArti = (int) $id;
+    $sql = "DELETE FROM arti WHERE idarti=$idArti";
+    mysqli_query($db,$sql);
+    // si on a supprimé un article (une ligne a été affectée)
+    if(mysqli_affected_rows($db)){
+        return true;
+    }
+    return false;
 }
 
 /*
