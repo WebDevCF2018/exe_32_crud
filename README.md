@@ -1,5 +1,3 @@
-# exercice MVC  et création de CRUD
-##  basé sur le dossier exe_32 et la bdd exe_32
 
 ### Principe:
 
